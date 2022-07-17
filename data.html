@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsi Pweb Semester 2</title>
+	<style type="text/css">
+	.border{
+	background: #E0D8B0;
+}
+body{
+	background:url(https://d2muumq9nnirye.cloudfront.net/store/imgs/rz_logo.png);
+}
+
+}
+#header{
+	width: 100%;
+	float: left;
+	height: 300px;
+	
+}
+#menu{
+	width: 100%;
+	height: 60px;
+	float: left;
+	background-color: #1C0A00;
+	text-align: right;
+	color: white
+}
+#main-content{
+	background-color: black;
+	width: 100%;
+	min-height: auto;
+	font-size: 32;
+}
+#news{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	float: left;
+	background-color: white;
+	font-size: 20;
+}
+
+#footer{
+	width: 100%;
+	height: 40px;
+	float: left;
+	background-color: #333333;
+	text-align: center;
+	color: orange
+}
+#content{
+	margin:auto;
+	width: 960px;
+}
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+	</style>
+</head>
+<body>
+<div id="content">
+		<div><img src="https://cdn-3.tstatic.net/jualbeli/img/njajal/2017/4/Tak-Semua-SPBU-di-Indonesia-Punya-Pertamina--Kenali-Ciri-ciri-Perbedaan-Mana-Milik-Pemerintah-dan-Swasta-master-1031329609.jpg" width=" 960" height="300"></div>
+		<div id="main-content">
+			<p align="left"> <div class="dropdown">
+ 				 <button class="dropbtn">Menu</button>
+ 				 <div class="dropdown-content">
+			     <a href="data.html">Formulir Pengisian Bensin</a>
+   				 <a href="datapembeli.php">Data Pembelian Bensin</a>
+  </div>
+</div></font><</p>
+		<div id="news">
+			<p>
+			<div class="border" >
+<form method="post" action="proses.php" name="responsi">Data Pembeli
+	<table>
+		<tr>
+			<td>Nama: </td>
+			<td><input type="text" name="nama" id="nama" minlength="3" maxlength="21"></td>
+		</tr>
+		<tr>
+			<td>NIK: </td>
+			<td><input type="text" name="nik" id="nik" minlength="16" maxlength="20"></td>
+		</tr>
+		<tr>
+			<td>Tanggal Pembelian Bensin:</td>
+			<td><input type="date" name="tgl" id="tgl"></td>
+		</tr>
+
+		<tr>
+			<td>Alamat: </td>
+			<td><textarea name="alamat" id="alamat" id="alamat"></textarea>
+		</tr>
+		<tr>
+			<td>Jenis Kelamin:</td>
+			<td><input type="radio" name="jk" id="jk" value="1">Laki - Laki</td>
+			<td><input type="radio" name="jk" id="jk" value="2">Perempuan</td>
+		</tr>
+		<tr>
+			<td>Jenis Bensin:</td>
+			<td><select name="bensin">
+				<option value="0" >Pilih</option>
+				<option value="1" id="pertamax">Pertamax</option>
+				<option value="2" id="solar">Solar</option>
+				<option value="3" id="pertalite">Pertalite</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Berapa Banyak Bensin Yang dibeli </td>
+			<td><input type="text" name="liter" id="liter"></td>
+		</tr>
+				<tr>
+			<td></td>
+	
+			<td><input type="submit" name="submit" value="submit" onclick="tugas()"></input></td>
+			<td><input type="reset" name="reset" value="Bersihkan"></input></td>
+		</tr>
+	</table>
+
+</form>
+<script >
+	function tugas(){
+		if (document.forms["responsi"]["nama"].value == "") {
+			alert("Masukkan Nama Terlebih Dahulu");
+			(document.forms["responsi"]["nama"].focus());
+			return false;
+		}
+
+		if (document.forms["responsi"]["nik"].value == "") {
+			alert("Masukkan NIK Terlebih Dahulu");
+			(document.forms["responsi"]["nik"].focus());
+			return false;
+		}
+
+		if (document.forms["responsi"]["tgl"].value == "") {
+			alert("Masukkan Tanggal Terlebih Dahulu");
+			(document.forms["responsi"]["tgl"].focus());
+			return false;
+		}
+
+		if (document.forms["responsi"]["alamat"].value == "") {
+			alert("alamat Tidak Boleh Kosong");
+			(document.forms["responsi"]["alamat"].focus());
+			return false;
+		}
+
+		if (document.forms["responsi"]["bensin"].selectedIndex < 1) {
+			alert("Pilih Bensin Terlebih Dahulu");
+			(document.forms["responsi"]["bensin"].focus());
+			return false;
+		}
+		if (document.forms["responsi"]["liter"].value == "") {
+			alert("Masukkan Berapa Banyak Bensin yang akan dibeli Terlebih Dahulu");
+			(document.forms["responsi"]["liter"].focus());
+			return false;
+		}
+		
+		var valid = false;
+		var x = document.responsi.jk;
+
+		for (var i = 0; i<x.length; i++) {
+			if (x[i].checked) {
+				valid = true;
+				break;
+			}
+		}
+		if (valid) {
+		}
+		else{
+			alert("Silahkan Pilih Jenis Kelamin Anda");
+			return false;
+		}
+
+	}
+</script>
+			</p>
+		</div>
+		</div>	
+		</p>
+		</div>
+		<div id="footer">
+			Zaki Pratomo_2100018461_I
+		</div>
+	<div>
+
+</body>
+</html>
